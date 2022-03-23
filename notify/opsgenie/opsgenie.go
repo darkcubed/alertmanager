@@ -211,7 +211,7 @@ func (n *Notifier) createRequests(ctx context.Context, as ...*types.Alert) ([]*h
 
 		var msg = &opsGenieCreateMessage{
 			Alias:       alias,
-			Message:     message,
+			Message:     tmpl(n.conf.Message),
 			Description: tmpl(n.conf.Description),
 			Details:     details,
 			Source:      tmpl(n.conf.Source),
